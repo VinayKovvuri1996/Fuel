@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: fuelforce-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: fueladmin
+      POSTGRES_PASSWORD: supersecure
+      POSTGRES_DB: fuelforce
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
